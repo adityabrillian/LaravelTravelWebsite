@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $items = TravelPackage::with(['galleries'])->get();
+        $items = TravelPackage::with(['galleries'])->first()->take(4)->get();
         return view('pages.home',[
             'items' => $items
         ]);
