@@ -12,7 +12,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item @if ('admin/dashboard' == request()->path())
+    <li class="nav-item @if ('admin' == request()->path())
         active
     @endif">
     <a class="nav-link" href="{{ route('dashboard') }}">

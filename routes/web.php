@@ -48,6 +48,9 @@ Route::prefix('admin')
             ->name('dashboard');
 
         Route::resource('user', 'UserController');
+        Route::post('/user/{id}', 'UserController@changeRoles')
+            ->name('changeRoles');
+
         Route::resource('travel-package', 'TravelPackageController');
         Route::resource('gallery', 'GalleryController');
         Route::resource('transaction', 'TransactionController');

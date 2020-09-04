@@ -26,6 +26,21 @@ class UserController extends Controller
         ]); 
     }
 
+    public function changeRoles(Request $request, $id)
+    {
+        $items = User::findOrFail($id);
+        
+        if ($items->roles == 'ADMIN') {
+            User::where('roles','ADMIN')->update(['roles' => 'USER']);
+        } else {
+            User::where('roles','USER')->update(['roles' => 'ADMIN']);
+        }
+
+        $items->roles = $request->roles;
+        $items->save();
+        return redirect()->back()->with('message', 'Roles user has changed!');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

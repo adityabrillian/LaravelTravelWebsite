@@ -7,7 +7,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Paket Travel {{ $item->title }} </h1>
+            <h1 class="h3 mb-0 text-gray-800">Edit User {{ $item->username }} </h1>
         </div>
 
         @if ($errors->any())
@@ -22,19 +22,19 @@
 
         <div class="card shadow">
             <div class="card-body">
-                <form action="{{ route('travel-package.update', $item->id) }}" method="POST">
+                <form action="{{ route('user.update', $item->id) }}" method="POST">
                     @method('PUT')
                     @csrf
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Title" value="{{ $item->title }}">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Name" value="{{ $item->name }}">
                     </div>
                     <div class="form-group">
-                        <label for="location">Location</label>
-                        <input type="text" class="form-control" name="location" placeholder="Location" value="{{ $item->location }}">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="Username" value="{{ $item->username }}">
                     </div>
                     <div class="form-group">
-                        <label for="about">About</label>
+                        <label for="about">Roles</label>
                         <textarea rows="10" class="d-block w-100 form-control" name="about">{{ $item->about }}</textarea>
                     </div>
                     <div class="form-group">
