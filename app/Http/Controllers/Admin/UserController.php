@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\TravelPackageRequest;
-use App\TravelPackage;
+use App\Http\Requests\Admin\UserRequest;
+use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+
 
 // use DataTables;
 
-class TravelPackageController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +19,9 @@ class TravelPackageController extends Controller
      */
     public function index(Request $request)
     {
-        $items = TravelPackage::all();
+        $items = User::all();
 
-        return view('pages.admin.travel-package.index', [
+        return view('pages.admin.user.index', [
             'items' => $items
         ]); 
     }
@@ -33,7 +33,7 @@ class TravelPackageController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.travel-package.create');
+        return view('pages.admin.user.create');
     }
 
     /**
@@ -42,13 +42,13 @@ class TravelPackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TravelPackageRequest $request)
+    public function store(UserRequest $request)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
-        TravelPackage::create($data);
-        return redirect()->route('travel-package.index');
+        User::create($data);
+        return redirect()->route('user.index');
     }
 
     /**
@@ -70,9 +70,9 @@ class TravelPackageController extends Controller
      */
     public function edit($id)
     {
-        $item = TravelPackage::findOrFail($id);
+        $item = User::findOrFail($id);
 
-        return view('pages.admin.travel-package.edit', [
+        return view('pages.admin.user.edit', [
             'item' => $item
         ]);
     }
@@ -84,16 +84,16 @@ class TravelPackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TravelPackageRequest $request, $id)
+    public function update(UserRequest $request, $id)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
-        $item = TravelPackage::findOrFail($id);
+        $item = User::findOrFail($id);
 
         $item->update($data);
 
-        return redirect()->route('travel-package.index');
+        return redirect()->route('user.index');
     }
 
     /**
@@ -104,8 +104,8 @@ class TravelPackageController extends Controller
      */
     public function destroy($id)
     {
-        $item = TravelPackage::findOrFail($id);
+        $item = User::findOrFail($id);
         $item->delete();
-        return redirect()->route('travel-package.index');
+        return redirect()->route('user.index');
     }
 }
