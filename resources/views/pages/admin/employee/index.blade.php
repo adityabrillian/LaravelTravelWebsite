@@ -7,9 +7,9 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Gallery</h1>
-        <a href="{{ route('gallery.create') }}" class="btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Gallery
+        <h1 class="h3 mb-0 text-gray-800">Data Employee</h1>
+        <a href="{{ route('employee.create') }}" class="btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data Employee
         </a>
     </div>
 
@@ -17,28 +17,28 @@
     <div class="row">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
+                <table id="travelPackage_table" class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Travel</th>
-                            <th>Gambar</th>
+                            <th>employeeNumber</th>
+                            <th>lastName</th>
+                            <th>firstName</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                <tbody>
+                    <tbody>
                         @forelse ($items as $item)
                             <tr>
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->travel_package->title }}</td>
+                                <td>{{ $item->employeeNumber }}</td>
+                                <td>{{ $item->lastName }}</td>
+                                <td>{{ $item->firstName }}</td>
                                 <td>
-                                    <img src="{{ ($item->image) }}" alt="" style="width:150px" class="img-thumbnail">
-                                </td>
-                                <td>
-                                    <a href="{{ route('gallery.edit', $item->id) }}" class="btn btn-info">
+                                    <a href="{{ route('employee.edit', $item->id) }}" class="btn btn-info">
                                         <i class="fa fa-pencil-alt"></i>
                                     </a>
-                                    <form action="{{ route('gallery.destroy', $item->id) }}" class="d-inline" method="POST">
+                                    <form action="{{ route('employee.destroy', $item->id) }}" class="d-inline" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
@@ -46,10 +46,10 @@
                                         </button>
                                     </form>
                                 </td>
-                            </tr>w
+                            </tr>
                         @empty
                             <tr>
-                                <td colspan="7" class="text-center">
+                                <td colspan="5" class="text-center">
                                     Data Kosong
                                 </td>
                             </tr>
@@ -64,5 +64,20 @@
 
 </div>
 <!-- /.container-fluid -->
-
 @endsection
+
+@push('addon-script')
+<script>
+    $(document).ready(function() {
+        $('#travelPackage_table').DataTable( {
+            "columnDefs": [
+                { 
+                    "orderable": false, 
+                    "targets": 4,
+                    "searchable": false 
+                }
+            ]
+        });
+    } );
+</script>
+@endpush

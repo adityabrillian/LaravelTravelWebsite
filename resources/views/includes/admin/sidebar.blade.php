@@ -68,6 +68,18 @@
         <span>Transaksi</span></a>
     </li>
 
+    <li class="nav-item @if ('admin/employee' == request()->path())
+        active
+    @elseif ('admin/employee/create' == request()->path())
+        active
+    @elseif ('admin/employee/edit' == request()->path())
+        active
+    @endif">
+    <a class="nav-link" href="{{ route('employee.index') }}">
+        <i class="fas fa-fw fa-dollar-sign"></i>
+        <span>Employee</span></a>
+    </li>
+
     <hr class="sidebar-divider">
 
     <!-- Sidebar Toggler (Sidebar) -->

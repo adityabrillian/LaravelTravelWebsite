@@ -16,3 +16,5 @@ class HomeController extends Controller
     }
 }
 
+// Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam adipisci totam, tempore explicabo deleniti odit vero dignissimos dolor eum incidunt officia tenetur harum ex ab quaerat cupiditate soluta. Quia, veritatis.
+
