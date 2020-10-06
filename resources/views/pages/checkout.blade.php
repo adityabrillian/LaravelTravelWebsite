@@ -187,7 +187,7 @@
                             <div class="bank-item pb-3">
                                 <img src="{{ url('frontend/images/ic_bank.png' )}}" class="bank-image">
                                 <div class="description">
-                                    <h3>PT Nomads ID</h3>
+                                    <h3>PT Armyna</h3>
                                     <p>
                                         0881 8829 8800
                                         <br>
@@ -200,7 +200,7 @@
                             <div class="bank-item pb-3">
                                 <img src="{{ url('frontend/images/ic_bank.png' )}}" class="bank-image">
                                 <div class="description">
-                                    <h3>PT Nomads ID</h3>
+                                    <h3>PT Armyna</h3>
                                     <p>
                                         0899 2267 8700
                                         <br>

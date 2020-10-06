@@ -423,6 +423,10 @@ header .btn-get-started:hover {
     max-height: 60px;
 }
 
+.section-details-content .card-details .attendee td {
+    color: #A9AAAE;
+}
+
 .section-details-content .card-details .trip-informations th {
     font-weight: 300;
     font-size: 18px;
@@ -471,7 +475,7 @@ header .btn-get-started:hover {
 .section-details-content .card-details .bank .bank-item .description p {
     font-weight: normal;
     font-size: 14px;
-    color: #091f51;
+    color: #A9AAAE;
 }
 
 .section-details-content .card-details .bank .bank-image {
@@ -505,9 +509,7 @@ header .btn-get-started:hover {
 }
 
 .section-details-content .card-details .btn-add-now:hover {
-    background-color: transparent;
-    color: #d65a31;
-    border: 2px solid #d65a31;
+    background-color: inherit;
 }
 
 .section-details-content .card-right {

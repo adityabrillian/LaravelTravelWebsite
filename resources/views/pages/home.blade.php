@@ -8,14 +8,14 @@
 <!-- Header -->
 <header class="text-center">
     <h1>
-        Explore The Beautiful World
+        Let's Go With Us
         <br>
-        As Easy One Click
+        Travel The New World
     </h1>
     <p class="mt-3">
-        You Will See Beautiful
+        Don't Forget Invite
         <br>
-        World You Never See
+        Your Family and Friends
     </p>
     <a href="#popular" class="btn btn-get-started px-4 mt-4">
         Get Started

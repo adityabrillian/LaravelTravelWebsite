@@ -17,7 +17,7 @@ class CreateTransactionDetailsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('transaction_id');
             $table->string('username');
-            $table->integer('nationality');
+            $table->string('nationality');
             $table->integer('is_visa');
             $table->string('doe_passport');
             $table->softDeletes();
