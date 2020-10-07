@@ -17,7 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('travel_packages_id');
             $table->string('image');
-            $table->softDeletes();
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

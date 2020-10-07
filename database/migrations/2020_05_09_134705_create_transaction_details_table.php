@@ -20,7 +20,7 @@ class CreateTransactionDetailsTable extends Migration
             $table->string('nationality');
             $table->integer('is_visa');
             $table->string('doe_passport');
-            $table->softDeletes();
+            $table->SoftDeletes();
             $table->timestamps();
         });
     }

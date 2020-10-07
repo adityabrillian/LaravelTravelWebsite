@@ -3,19 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Gallery extends Model
 {
-    use softDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'travel_packages_id', 'image',
     ];
 
-    protected $hidden = [
-
-    ];
+    protected $hidden = [];
 
     public function travel_package()
     {

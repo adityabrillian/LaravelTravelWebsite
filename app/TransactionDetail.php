@@ -3,24 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TransactionDetail extends Model
 {
-    use softDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'transactions_id', 'username', 'nationality',
         'is_visa', 'doe_passport'
     ];
 
-    protected $hidden = [
+    protected $hidden = [];
 
-    ];
-    
     public function transaction()
     {
-        return $this->belongsTo(Transaction::class, 'transactions_id', 'id'); 
+        return $this->belongsTo(Transaction::class, 'transactions_id', 'id');
     }
-    
 }
