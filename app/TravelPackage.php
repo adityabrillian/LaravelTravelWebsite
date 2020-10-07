@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TravelPackage extends Model
 {
-    use softDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'title', 'slug', 'location', 'about', 'featured_event', 
